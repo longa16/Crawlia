@@ -1,15 +1,68 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Crawlia - Scraper Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crawlia Web Scraper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Crawlia - Scraper Web</h1>
-    <form action="/performance-test" method="POST">
-        <label for="url">Enter url :</label>
-        <input type="text" id="url" name="url" required>
-        <button type="submit">Analyse</button>
-    </form>
+    <div class="container">
+        <h1>Crawlia Web Scraper</h1>
+        <input type="text" id="urlInput" placeholder="Enter URL to analyze">
+        <button onclick="analyzeUrl()">Analyze</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function analyzeUrl() {
+            const url = document.getElementById('urlInput').value;
+            if (!url) {
+                alert('Please enter a URL');
+                return;
+            }
+
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = 'Analyzing...';
+
+            fetch('/performance-test', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ url: url })
+            })
+            .then(response => response.json())
+            .then(data => {
+                resultElement.textContent = `TTFB: ${data.ttfb} ms, SEO Issues: ${data.seoIssues.join(', ')}, Dead Links: ${data.deadLinks.join(', ')}`;
+            })
+            .catch(error => {
+                resultElement.textContent = 'An error occurred: ' + error;
+            });
+        }
+    </script>
 </body>
 </html>
