@@ -1,0 +1,19 @@
+{
+  "name": "crawlia",
+  "version": "1.0.0",
+  "description": "web scrapping app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/longa16/Crawlia.git"
+  },
+  "author": "yann loic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/longa16/Crawlia/issues"
+  },
+  "homepage": "https://github.com/longa16/Crawlia#readme"
+}
