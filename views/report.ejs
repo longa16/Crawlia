@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Crawlia - Rapport</title>
+</head>
+<body>
+    <h1>Rapport pour <%= url %></h1>
+    <p><strong>TTFB :</strong> <%= report.ttfb %> ms</p>
+    <h2>Attributs SEO</h2>
+    <p><strong>Description Meta :</strong> <%= report.seo.metaDescription %></p>
+    <p><strong>Tag H1 :</strong> <%= report.seo.h1 %></p>
+    <p><strong>Tag H2 :</strong> <%= report.seo.h2 %></p>
+    <p><strong>Images sans Texte Alt :</strong> <%= report.seo.missingAltImages.join(', ') %></p>
+    <h2>Liens Morts</h2>
+    <ul>
+        <% report.deadlinks.forEach(link => { %>
+            <li><%= link %></li>
+        <% }) %>
+    </ul>
+    <a href="/public">Retour</a>
+</body>
+</html>
