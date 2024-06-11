@@ -17,3 +17,32 @@ crawlia analyse :
 ### Exemple
 
 ![analysing exmeple](public/1.png "illustration")
+
+
+## How to execute the code 
+
+Initialize the Project:
+```
+npm init -y
+```
+
+Install dependencies :
+```
+npm install express 
+```
+
+Launch Application :
+```
+node app.js
+```
+
+Open your browser and go to :
+```
+http://localhost:3000
+```
+Enter a URL to analyze and view the results.
+
+
+
+
+
