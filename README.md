@@ -1,9 +1,9 @@
 # Crawlia
 
-This is a simple web scrapping app made in node js.
+This is a simple web scrapping app made in Node.js.
 The user interface contain just a simple input containing the URL you want to analyze.
-Once the form submitted, the analyse starts.
-Once the report generated,  it present  to the user !
+Once the form submitted, the analysis starts.
+Once the report generated,  it presents  to the user !
 
 ## Analysing the page
 
@@ -16,7 +16,7 @@ crawlia analyse :
 ```
 ### Exemple
 
-![analysing exmeple](public/1.png "illustration")
+![analysing exemple](public/img/1.png "illustration")
 
 
 ## How to execute the code 
