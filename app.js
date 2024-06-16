@@ -10,15 +10,18 @@ app.post('/performance-test', async (req, res) => {
     const { url } = req.body;
 
     try {
+        // Measure TTFB
         const startTime = Date.now();
         const response = await fetch(url);
         const endTime = Date.now();
         const ttfb = endTime - startTime;
 
+        // Check SEO attributes and dead links
         const html = await response.text();
         const seoIssues = [];
         const deadLinks = [];
 
+        // SEO checks
         if (!html.includes('<meta name="description"')) {
             seoIssues.push('Missing meta description');
         }
@@ -28,11 +31,14 @@ app.post('/performance-test', async (req, res) => {
         if (!html.includes('<h2>')) {
             seoIssues.push('Missing H2 tag');
         }
+
+        // Check for images without alt attributes
         const altMissing = html.match(/<img [^>]*alt=""/g);
         if (altMissing) {
             seoIssues.push('Images without alt attributes');
         }
 
+        // Check for dead links
         const linkMatches = html.match(/href="(http[^"]*)"/g);
         if (linkMatches) {
             for (const match of linkMatches) {
@@ -48,6 +54,7 @@ app.post('/performance-test', async (req, res) => {
             }
         }
 
+        // Send the response
         res.json({ ttfb, seoIssues, deadLinks });
     } catch (error) {
         res.status(500).json({ error: error.message });
