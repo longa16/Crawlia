@@ -5,7 +5,7 @@ The user interface contain just a simple input containing the URL you want to an
 Once the form submitted, the analysis starts.
 Once the report generated,  it presents  to the user !
 
-## Analysing the page
+# Analysing the page
 
 crawlia analyse : 
 
