@@ -14,7 +14,7 @@ crawlia analyse :
 - Does the document has SEO attribute such as meta-description, h1, h2 etc… ?
 - Does the page include deadlinks ? ( 404 urls in the page for example ).
 ```
-### Exemple
+### Example
 
 ![analysing exemple](public/img/1.png "illustration")
 
