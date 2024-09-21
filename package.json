@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/longa16/Crawlia#readme",
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "^4.20.0",
     "node-fetch": "^2.7.0"
   }
 }
