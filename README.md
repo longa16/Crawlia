@@ -1,9 +1,9 @@
-# 🕷️ Crawlia
+# Crawlia
 
-**Crawlia** is a simple and lightweight **web scraping** app built with **Node.js** 🟢.  
-It features a minimalist interface with a single input field where you can enter any URL you want to analyze 🌐.
+**Crawlia** is a simple and lightweight **web scraping** app built with **Node.js**.  
+It features a minimalist interface with a single input field where you can enter any URL you want to analyze.
 
-Once you submit the form, the app performs an analysis and displays a clear and informative **SEO report** 📊.
+Once you submit the form, the app performs an analysis and displays a clear and informative **SEO report**.
 
 ---
 
@@ -23,22 +23,22 @@ crawlia analyse :
 
 ## How to execute the code 
 
-📁 Initialize the Project:
+ Initialize the Project:
 ```
 npm init -y
 ```
 
-📦 Install dependencies :
+ Install dependencies :
 ```
 npm install express 
 ```
 
-🚀 Launch Application :
+ Launch Application :
 ```
 node app.js
 ```
 
-🌍 Open your browser and go to :
+ Open your browser and go to :
 ```
 http://localhost:3000
 ```
